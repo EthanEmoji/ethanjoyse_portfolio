@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">Ethan Joyse's Portfolio</a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+    </header>
+   
+    <main class="container">
+        <section>
+            <p class="eyebrow">Let's connect</p>
+            <h1>Contact Me</h1>
+            <p>If you would like to connect with me, you can reach out directly using my details below or send a message through the form.</p>
+<!-- Empty container box styled by .contact-box -->
+<div id="contact-box" class="contact-box"></div>
+
+<script>
+  const CONFIG = {
+    contact: {
+      email: "ethanjoyse1234@gmail.com",
+      phone: "+91 8590461907",
+      addressLines: [
+        "Vimala Sadanam",
+        "Mulavana P.O, Perayam",
+        "Near NSS HS, Kollam",
+        "Kerala, India - 691503"
+      ]
+    }
+  };
+
+  // Injects the CONFIG details into the box above
+  const box = document.getElementById("contact-box");
+  box.innerHTML = `
+    <h3>Direct Contact Information</h3>
+    <p><strong>Email:</strong> <a href="mailto:${CONFIG.contact.email}">${CONFIG.contact.email}</a></p>
+    <p><strong>Phone:</strong> <a href="tel:${CONFIG.contact.phone.replace(/\s+/g, '')}">${CONFIG.contact.phone}</a></p>
+    <address>
+      <strong>Address:</strong><br>
+      ${CONFIG.contact.addressLines.join("<br>")}
+    </address>
+  `;
+</script>
+
+            <!-- Updated mailto link to use your actual email -->
+            <form class="contact-form" action="mailto:ethanjoyse1234@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Your Name</label>
+                <input id="name" type="text" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email</label>
+                <input id="email" type="email" name="email" placeholder="Enter your email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://github.com/EthanEmoji" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.instagram.com/ethansvlogss" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ethan Joyse. All rights reserved.</p>
+    </footer>
+</body>
+</html>
